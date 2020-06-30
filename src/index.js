@@ -50,12 +50,23 @@ class App extends Component {
     });
   };
 
+  handleAddItems = () => {
+    const counters = [...this.state.counters];
+    const new_counters = counters.concat({
+      id: counters.length + 1,
+      value: 0,
+    });
+    this.setState({
+      counters: new_counters,
+    });
+  };
+
   render() {
     return (
       <React.Fragment>
         <Navbar
           totalCounters={this.state.counters.filter((c) => c.value > 0).length}
-          addItems={this.handleAddItems}
+          onAddItems={this.handleAddItems}
         />
         <main className="container">
           <Counters

@@ -8,6 +8,9 @@ const Navbar = (props) => {
         <span className="badge badge-pill badge-secondary m-2">
           {props.totalCounters}
         </span>
+        <button className="btn btn-secondary m-2" onClick={props.onAddItems}>
+          Add Items
+        </button>
       </a>
     </nav>
   );
